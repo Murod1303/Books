@@ -1,0 +1,20 @@
+.hero__carusel {
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  padding-top: 45px;
+  padding-left: 80px;
+  border-radius: 25px;
+  background-image: url("../../assets/images/slickbg.png");
+  background-size: 100% 100%;
+}
+
+.hero__title {
+  color: #C9AC8C;
+  // font-family: "Rotterburg Stylish FREE";
+  font-family: monospace;
+  font-size: 61px;
+  font-weight: 400;
+  line-height: normal;
+}

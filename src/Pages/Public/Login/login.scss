@@ -1,0 +1,56 @@
+.login__title {
+  color: #FFF;
+  font-family: "Arial Black";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.login__subtitle {
+  display: inline-block;
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  &--link {
+    color: #549FF9;
+  }
+}
+.styledInput {
+  background: transparent;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 12px 12px 12px 30px;
+  max-width: 330px;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #B4B4BB;
+  //typography
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-radius 0.5s linear ;
+  &::placeholder {
+    color: #aaa;
+  }
+  &:focus {
+    border-radius: 20px;
+  }
+}
+.form__btn--login {
+  display: inline-block;
+  max-width: 328px;
+  width: 100%;
+  margin-top: 34px;
+  padding: 10px;
+  border-radius: 99px;
+  background-color: #fff !important;
+  color: #000;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
