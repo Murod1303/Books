@@ -1,3 +1,5 @@
 export const AuthorsAdd = () => {
-  return <></>;
+  return <>
+  <h3>add author</h3>
+  </>;
 };

@@ -1,15 +1,19 @@
 import { Route, Routes } from "react-router-dom";
-import { TopHeader } from "../../Components/TopHeader/TopHeader";
-import { List } from "../../Components/List/List";
 import { Books } from "../../Pages/Private/Books/Books";
+import { AuthorsAdd } from "../../Pages/Private/AuthorsAdd/AuthorsAdd";
+import { BooksAdd } from "../../Pages/Private/BooksAdd/BooksAdd";
+import { Authors } from "../../Pages/Private/Authors/Authors";
+import { Header } from "../../Components/Header/Header";
 
 export const PrivateApp = () => {
   return (
     <>
-      <TopHeader />
+      <Header/>
       <Routes>
-        <Route index element={<List />} />
-        <Route path={"books"} element={<Books />} />
+        <Route index element={<Authors/>} />
+        <Route path={"/books"} element={<Books />} />
+        <Route path={"/addauthor"} element={<AuthorsAdd />} />
+        <Route path={"/addbook"} element={<BooksAdd />} />
       </Routes>
     </>
   );

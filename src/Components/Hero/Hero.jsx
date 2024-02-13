@@ -10,10 +10,12 @@ export const Hero = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000
   };
   return (
     <div className="slider-container max-w-[1356px] w-full h-[347px] m-auto">
-      <Slider {...settings}>
+      <Slider  {...settings}>
         <div className="hero__carusel  bg-lime-200">
           <h3 className="hero__title w-[337px]">Temuriylar davri adabiyoti</h3>
         </div>

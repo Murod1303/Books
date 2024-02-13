@@ -1,13 +1,13 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { RegisterBg } from "../../../assets/Images";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useContext } from "react";
 import { TokenContext } from "../../../Components/tokenContext/tokenContext";
-
 export const Register = () => {
   const {setToken} = useContext(TokenContext)
+  const navigate = useNavigate()
   return (
     <>
       <div className="login__wrapper  w-full h-screen flex items-center justify-center m-auto">
@@ -59,6 +59,7 @@ export const Register = () => {
                 if(res.status === 201){
                   localStorage.setItem("token", res?.data?.token)
                   setToken(res.data.token) 
+                  navigate("/")
                  }
               }).catch(err=> console.log(err))
 
