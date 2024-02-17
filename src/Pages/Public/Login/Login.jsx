@@ -1,5 +1,5 @@
 import { Field, Form, Formik } from "formik";
-import * as Yup from "yup"
+import * as Yup from "yup";
 import "./login.scss";
 import { LoginBG } from "../../../assets/Images";
 import { NavLink } from "react-router-dom";
@@ -7,7 +7,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { TokenContext } from "../../../Components/tokenContext/tokenContext";
 export const Login = () => {
-  const {setToken} = useContext(TokenContext)
+  const { setToken } = useContext(TokenContext);
   return (
     <>
       <div className="login__wrapper  w-full h-screen flex items-center justify-center m-auto">
@@ -27,25 +27,28 @@ export const Login = () => {
               email: "",
               password: "",
             }}
-            validationSchema={Yup.object({ 
-            email: Yup.string()
-              .min(2, "too short")
-              .max(50, "very long")
-              .required("please fill in the field"),
-            password: Yup.string()
-              .min(2, "too short")
-              .max(20, "very long")
-              .required("please fill in the field"),
-          })}
+            validationSchema={Yup.object({
+              email: Yup.string()
+                .min(2, "too short")
+                .max(50, "very long")
+                .required("please fill in the field"),
+              password: Yup.string()
+                .min(2, "too short")
+                .max(20, "very long")
+                .required("please fill in the field"),
+            })}
             onSubmit={(values) => {
               console.log(values);
-              axios.post("http://localhost:5000/user/login", values).then(res=> {
-                console.log(res);
-                if(res.status === 201){
-                 localStorage.setItem("token", res?.data?.token)
-                 setToken(res.data.token) 
-                }
-              }).catch(err=> console.log(err))
+              axios
+                .post("http://localhost:5000/user/login", values)
+                .then((res) => {
+                  console.log(res);
+                  if (res.status === 201) {
+                    localStorage.setItem("token", res?.data?.token);
+                    setToken(res.data.token);
+                  }
+                })
+                .catch((err) => console.log(err));
             }}
           >
             <Form>

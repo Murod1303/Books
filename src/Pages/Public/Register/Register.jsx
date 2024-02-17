@@ -6,8 +6,8 @@ import axios from "axios";
 import { useContext } from "react";
 import { TokenContext } from "../../../Components/tokenContext/tokenContext";
 export const Register = () => {
-  const {setToken} = useContext(TokenContext)
-  const navigate = useNavigate()
+  const { setToken } = useContext(TokenContext);
+  const navigate = useNavigate();
   return (
     <>
       <div className="login__wrapper  w-full h-screen flex items-center justify-center m-auto">
@@ -24,7 +24,7 @@ export const Register = () => {
           </strong>
           <Formik
             initialValues={{
-              first_name:"",
+              first_name: "",
               last_name: "",
               phone: "",
               email: "",
@@ -54,15 +54,17 @@ export const Register = () => {
             })}
             onSubmit={(values) => {
               console.log(values);
-              axios.post("http://localhost:5000/user/register", values).then(res=> {
-                console.log(res);
-                if(res.status === 201){
-                  localStorage.setItem("token", res?.data?.token)
-                  setToken(res.data.token) 
-                  navigate("/")
-                 }
-              }).catch(err=> console.log(err))
-
+              axios
+                .post("http://localhost:5000/user/register", values)
+                .then((res) => {
+                  console.log(res);
+                  if (res.status === 201) {
+                    localStorage.setItem("token", res?.data?.token);
+                    setToken(res.data.token);
+                    navigate("/");
+                  }
+                })
+                .catch((err) => console.log(err));
             }}
           >
             <Form>
@@ -78,7 +80,7 @@ export const Register = () => {
                   {<ErrorMessage name="first_name" />}
                 </span>
               </label>
-              
+
               <label className="">
                 <Field
                   className="styledInput"
@@ -90,7 +92,7 @@ export const Register = () => {
                 <span className="errorMessage">
                   {<ErrorMessage name="last_name" />}
                 </span>
-              </label> 
+              </label>
               <label>
                 <Field
                   className="styledInput"

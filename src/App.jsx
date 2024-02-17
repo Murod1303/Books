@@ -4,7 +4,7 @@ import { PublicApp } from "./Apps/PublicApp/Public.app";
 import { TokenContext } from "./Components/tokenContext/tokenContext";
 
 function App() {
-  const {token} = useContext(TokenContext)
+  const { token } = useContext(TokenContext);
   if (token) {
     return (
       <main className="bg-[#191919] ">
@@ -13,11 +13,11 @@ function App() {
         </div>
       </main>
     );
-  }else {
+  } else {
     return (
       <main className="bg-[#191919] ">
         <div className="container m-auto px-5">
-        <PublicApp />
+          <PublicApp />
         </div>
       </main>
     );

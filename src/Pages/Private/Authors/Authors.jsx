@@ -1,11 +1,13 @@
-import { List } from "../../../Components/List/List";
+import { Outlet } from "react-router-dom";
+import { ListNavLink } from "../../../Components/ListNavLink/ListNavLink";
 import { TopHeader } from "../../../Components/TopHeader/TopHeader";
 
 export const Authors = () => {
   return (
     <>
-      <TopHeader/>
-      <List />
+      <TopHeader />
+      <ListNavLink />
+      <Outlet />
     </>
   );
 };

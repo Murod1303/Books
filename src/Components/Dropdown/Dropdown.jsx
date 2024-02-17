@@ -1,15 +1,18 @@
 import { useContext, useState } from "react";
 import "./dropdown.scss";
 import { IoIosArrowDown } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { TokenContext } from "../tokenContext/tokenContext";
+
 export const Dropdown = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const {setToken} = useContext(TokenContext)
+  const { setToken } = useContext(TokenContext);
   const hanleRemoveLocalStorage = () => {
-    localStorage.removeItem("token")
-    setToken("")
-  }
+    localStorage.removeItem("token");
+    setToken("");
+    navigate("/");
+  };
   const handleOpen = () => {
     setOpen(!open);
     console.log("open");
@@ -48,7 +51,11 @@ export const Dropdown = () => {
           </NavLink>
         </li>
         <li className="w-full">
-          <button onClick={()=> hanleRemoveLocalStorage()} className="dropdown__item" type="button">
+          <button
+            onClick={() => hanleRemoveLocalStorage()}
+            className="dropdown__item"
+            type="button"
+          >
             Log out
           </button>
         </li>

@@ -1,5 +1,3 @@
-
 export const SingleAuthor = () => {
-  return(<>
-  </>
-)}
+  return <></>;
+};

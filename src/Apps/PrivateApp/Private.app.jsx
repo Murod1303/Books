@@ -8,12 +8,13 @@ import { Header } from "../../Components/Header/Header";
 export const PrivateApp = () => {
   return (
     <>
-      <Header/>
+      <Header />
       <Routes>
-        <Route index element={<Authors/>} />
+        <Route path="/*" element={<Authors />} />
         <Route path={"/books"} element={<Books />} />
         <Route path={"/addauthor"} element={<AuthorsAdd />} />
         <Route path={"/addbook"} element={<BooksAdd />} />
+        <Route path="*" element={"404"} />
       </Routes>
     </>
   );

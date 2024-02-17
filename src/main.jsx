@@ -8,9 +8,9 @@ import { NameProvider } from "./Components/tokenContext/tokenContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-    <NameProvider>     
-      <App />
-    </NameProvider>
+      <NameProvider>
+        <App />
+      </NameProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );

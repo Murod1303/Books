@@ -1,0 +1,35 @@
+.fileInput {
+  width: 375px;
+  display: flex;
+  padding: 161px 55px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 17px;
+  border: 2px dashed rgba(255, 255, 255, 0.30);
+  background: #4D4D4D;
+}
+.addInput__title {
+  margin-bottom: 12px;
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 600;
+}
+.addinput {
+  width: 330px;
+  margin: 0 auto;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: 1px solid #B4B4BB;
+  color: #FFF;
+  font-size: 14px;
+  background-color: #000;
+}
+.addBtn {
+  width: 300px;
+  display: block;
+  padding: 12px;
+  border-radius: 99px;
+  background-color: #FFF !important;
+}
