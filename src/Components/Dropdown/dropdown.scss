@@ -9,7 +9,7 @@
 
 .dropdown__list {
   position: relative;
-  z-index: 10;
+  z-index: 30;
   width: 140px;
   background-color: #222;
   top: calc(100% + 5px);
@@ -33,4 +33,13 @@
 .open-dropdown {
   visibility: visible;
   transform: scale(1) translateY(0px);
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: rgba(34, 34, 34, 0.5);
 }

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { PrivateApp } from "./Apps/PrivateApp/Private.app";
 import { PublicApp } from "./Apps/PublicApp/Public.app";
-import { TokenContext } from "./Components/tokenContext/tokenContext";
+import { TokenContext } from "./Components/Context/tokenContext";
 
 function App() {
   const { token } = useContext(TokenContext);

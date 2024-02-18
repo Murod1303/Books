@@ -1,23 +1,37 @@
+/* eslint-disable react/prop-types */
+import { Field, Form, Formik } from "formik";
 import "./search.scss";
 import { BiSearchAlt } from "react-icons/bi";
-export const Search = () => {
+import axios from "axios";
+export const Search = ({setSearch, name}) => {
+  console.log(name);
+
+
   return (
-    <>
-      <div className="search__wrapper absolute bottom-[-100px] bg-black">
-        <h4 className="seach__title">Qidirish</h4>
-        <form className="search__inner flex items-center justify-start gap-[14px]">
-          <input
-            className="search__input"
-            type="text"
-            name="search"
-            placeholder="Adiblar, kitoblar, audiolar, maqolalar..."
-          />
-          <button className="search__btn flex items-center justify-center">
-            <BiSearchAlt className="mt-[4px]" />
-            <span>Izlash</span>
-          </button>
-        </form>
-      </div>
-    </>
+      <Formik className=""
+      initialValues={{
+        search:""
+      }}
+      onSubmit={(values)=> {
+        console.log(values);
+        axios.get(`http://localhost:5000/${name}/search?${name}=${values.search}`).then(res=>res.status===201 && setSearch(res.data)).catch(err=>console.log(err))
+      }}
+      >
+        <div className="search__wrapper absolute bottom-[-100px] bg-black">
+          <h4 className="seach__title">Qidirish</h4>
+          <Form className="search__inner flex items-center justify-center gap-[14px]">
+            <Field
+              className="search__input"
+              type="text"
+              name="search"
+              placeholder="Adiblar, kitoblar..."
+            />
+            <button className="search__btn flex items-center justify-center" type="submit">
+              <BiSearchAlt className="mt-[4px]" />
+              <span>Izlash</span>
+            </button>
+          </Form>
+        </div>
+      </Formik>
   );
 };

@@ -3,7 +3,7 @@ import "./bookadd.scss";
 import { HiOutlinePlusSm } from "react-icons/hi";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { TokenContext } from "../../../Components/tokenContext/tokenContext";
+import { TokenContext } from "../../../Components/Context/tokenContext";
 
 export const BooksAdd = () => {
   const { token } = useContext(TokenContext);
@@ -66,18 +66,18 @@ export const BooksAdd = () => {
         .then((res) => res.json())
         .then((data) => console.log(data))
         .catch((err) => console.log(err));
-        actions.resetForm({
-          values:{
-            title: "",
-            page: "",
-            year: "",
-            price: "",
-            genre_id: "",
-            author_id: "",
-            description: "",
-            image: null,
-          }
-        })
+      actions.resetForm({
+        values: {
+          title: "",
+          page: "",
+          year: "",
+          price: "",
+          genre_id: "",
+          author_id: "",
+          description: "",
+          image: null,
+        },
+      });
     },
   });
   return (

@@ -1,7 +1,13 @@
+/* eslint-disable no-unused-vars */
 import { NavLink } from "react-router-dom";
 import { Dropdown } from "../Dropdown/Dropdown";
 import "./header.scss";
+import { useState } from "react";
 export const Header = () => {
+  const [open, setOpen] = useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <header>
       <div className="header__wrapper max-w-[1356px] m-auto py-8 flex items-center justify-between">
@@ -33,7 +39,11 @@ export const Header = () => {
               </li>
             </ul>
           </nav>
-          <Dropdown />
+          <div
+            className={open ? "overlay" : "hidden"}
+            onClick={() => handleClose()}
+          ></div>
+          <Dropdown setOpen={setOpen} open={open} />
         </div>
       </div>
     </header>
