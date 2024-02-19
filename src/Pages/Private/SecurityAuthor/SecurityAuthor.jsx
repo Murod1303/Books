@@ -6,7 +6,7 @@ import { MeProvider } from "../../../Components/Context/Me";
 
 export const SecurityAuthor = () => {
   const { token } = useContext(TokenContext);
-  const { me , setUpdate} = useContext(MeProvider);
+  const { me, setUpdate } = useContext(MeProvider);
   const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   return (
     <>
@@ -34,7 +34,7 @@ export const SecurityAuthor = () => {
               .max(50, "maximum 50 character")
               .required("Required"),
           })}
-          onSubmit={(values,actions) => {
+          onSubmit={(values, actions) => {
             console.log(values);
             fetch("http://localhost:5000/user/security", {
               method: "PUT",
@@ -47,13 +47,15 @@ export const SecurityAuthor = () => {
               .then((res) => res.json())
               .then((data) => {
                 console.log(data),
-                setUpdate((e)=>{e+1});
+                  setUpdate((e) => {
+                    e + 1;
+                  });
               })
               .catch((err) => console.log(err));
-              actions.resetForm({
-                currentPassword: "",
-                newPassword: "",
-              })
+            actions.resetForm({
+              currentPassword: "",
+              newPassword: "",
+            });
           }}
         >
           {() => {

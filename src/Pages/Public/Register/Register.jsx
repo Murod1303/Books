@@ -4,7 +4,7 @@ import { RegisterBg } from "../../../assets/Images";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useContext } from "react";
-import { TokenContext } from "../../../Components/Context/tokenContext";
+import { TokenContext } from "../../../Components/Context/tokenContext"
 export const Register = () => {
   const { setToken } = useContext(TokenContext);
   const navigate = useNavigate();

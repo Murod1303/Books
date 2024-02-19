@@ -3,10 +3,10 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { TokenContext } from "./tokenContext";
 import axios from "axios";
 
-// me func 
+// me func
 export const MeProvider = createContext();
 export const MeContext = ({ children }) => {
-  const {token} = useContext(TokenContext)
+  const { token } = useContext(TokenContext);
   const [me, setMe] = useState([]);
   const [update, setUpdate] = useState(1);
   useEffect(() => {

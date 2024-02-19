@@ -7,7 +7,7 @@ import { TokenContext } from "../Context/tokenContext";
 import { MeProvider } from "../Context/Me";
 
 export const Dropdown = ({ setOpen, open }) => {
-  const {me} =useContext(MeProvider)
+  const { me } = useContext(MeProvider);
   const navigate = useNavigate();
 
   const { setToken } = useContext(TokenContext);
@@ -29,8 +29,12 @@ export const Dropdown = ({ setOpen, open }) => {
         className=" flex items-center justify-center gap-3 relative z-[30]"
         type="button"
       >
-        <img className="dropdown__image relative z-[2]" src={`http://localhost:5000/${me.image}`} alt="" />
-        <IoIosArrowDown className="fill-[#fff]"/>
+        <img
+          className="dropdown__image relative z-[2]"
+          src={`http://localhost:5000/${me.image}`}
+          alt=""
+        />
+        <IoIosArrowDown className="fill-[#fff]" />
       </button>
 
       <ul

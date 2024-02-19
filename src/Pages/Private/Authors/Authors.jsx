@@ -3,10 +3,10 @@ import { ListNavLink } from "../../../Components/ListNavLink/ListNavLink";
 import { useState } from "react";
 import { SearchList } from "../../../Components/Search/SearchList";
 import { Search } from "../../../Components/Search/Search";
-import {Hero} from "../../../Components/Hero/Hero"
+import { Hero } from "../../../Components/Hero/Hero";
 
 export const Authors = () => {
-  const [search, setSearch] = useState([])
+  const [search, setSearch] = useState([]);
   console.log(search);
   return (
     <>
@@ -14,7 +14,7 @@ export const Authors = () => {
         <Hero />
         <Search setSearch={setSearch} name={"author"} />
       </div>
-      {<SearchList search={search}  /> }
+      {<SearchList search={search} />}
       <ListNavLink />
       <Outlet />
     </>

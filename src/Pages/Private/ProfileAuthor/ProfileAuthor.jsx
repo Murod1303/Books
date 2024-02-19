@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useContext } from "react";
 import { TokenContext } from "../../../Components/Context/tokenContext";
-import * as Yup from "yup" 
+import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import {  MeProvider } from "../../../Components/Context/Me";
+import { MeProvider } from "../../../Components/Context/Me";
 
 export const ProfileAuthor = () => {
   const { token } = useContext(TokenContext);
   const formData = new FormData();
-  const {me, setUpdate} = useContext(MeProvider)
+  const { me, setUpdate } = useContext(MeProvider);
   return (
     <>
       <div className="w-full pt-10 h-full">
@@ -22,9 +22,18 @@ export const ProfileAuthor = () => {
             image: undefined,
           }}
           validationSchema={Yup.object({
-            first_name: Yup.string().min(2, "short!").max(50, "maximum 50 characters").required("Required"),
-            last_name: Yup.string().min(2, "short!").max(50, "maximum 50 characters").required("Required"),
-            phone: Yup.string().min(9, "must be 9 character!").max(9, "maximum 9 characters").required("Required"),
+            first_name: Yup.string()
+              .min(2, "short!")
+              .max(50, "maximum 50 characters")
+              .required("Required"),
+            last_name: Yup.string()
+              .min(2, "short!")
+              .max(50, "maximum 50 characters")
+              .required("Required"),
+            phone: Yup.string()
+              .min(9, "must be 9 character!")
+              .max(9, "maximum 9 characters")
+              .required("Required"),
             // image: Yup.mixed().required("Required"),
           })}
           onSubmit={(values) => {
@@ -42,7 +51,12 @@ export const ProfileAuthor = () => {
               body: formData,
             })
               .then((res) => res.json())
-              .then((data) => {console.log(data), setUpdate((e)=>{e+1})})
+              .then((data) => {
+                console.log(data),
+                  setUpdate((e) => {
+                    e + 1;
+                  });
+              })
               .catch((err) => console.log(err));
           }}
         >
@@ -81,7 +95,7 @@ export const ProfileAuthor = () => {
                       name="first_name"
                     />
                     <span className="absolute left-0 top-[100%] input__error text-[#Ff0000cc] font-medium text-[12px] inline-block ">
-                      <ErrorMessage name="first_name"/>
+                      <ErrorMessage name="first_name" />
                     </span>
                   </label>
                   <label className="mb-5 inline-block w-full relative">
@@ -94,7 +108,7 @@ export const ProfileAuthor = () => {
                       name="last_name"
                     />
                     <span className="absolute left-0 top-[100%] input__error text-[#Ff0000cc] font-medium text-[12px] inline-block ">
-                      <ErrorMessage name="last_name"/> 
+                      <ErrorMessage name="last_name" />
                     </span>
                   </label>
                   <label className="mb-5 inline-block w-full relative">
@@ -107,7 +121,7 @@ export const ProfileAuthor = () => {
                       name="phone"
                     />
                     <span className="absolute left-0 top-[100%] input__error text-[#Ff0000cc] font-medium text-[12px] inline-block ">
-                      <ErrorMessage name="phone"/>
+                      <ErrorMessage name="phone" />
                     </span>
                   </label>
                   <button

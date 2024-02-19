@@ -4,7 +4,6 @@ import { createContext, useState } from "react";
 
 export const TokenContext = createContext();
 
-
 export const NameProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
 
@@ -14,5 +13,3 @@ export const NameProvider = ({ children }) => {
     </TokenContext.Provider>
   );
 };
-
-
